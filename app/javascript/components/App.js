@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Home from './Home'
 import Details from './Details'
 import DetailsProduct from './DetailsProduct'
@@ -10,11 +10,10 @@ class App extends React.Component{
 
     return (
       <div>
-        <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/details" component={Details} />
           <Route exact path="/DetailsProduct" component={DetailsProduct} />
-        </Switch>
+
       </div>
     )
   }

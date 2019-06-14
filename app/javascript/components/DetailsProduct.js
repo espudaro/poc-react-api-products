@@ -24,7 +24,7 @@ class Details extends React.Component{
 
     var { items, isLoaded } = this.state;
     if (!isLoaded) {
-      return <div> Loading...</div>;
+      return <div className='details__prod'> Loading...</div>;
     } else {
       return (
         <div className='details__prod'>

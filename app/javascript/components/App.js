@@ -9,10 +9,13 @@ class App extends React.Component{
   render() {
 
     return (
-      <div>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/details" component={Details} />
-          <Route exact path="/DetailsProduct" component={DetailsProduct} />
+
+      <div className='main-content'>
+        <h1>Poc de React com Ruby!</h1>
+
+        <Route exact path="/" component={Home} />
+        <Route exact path="/details" component={Details} />
+        <Route exact path="/DetailsProduct" component={DetailsProduct} />
 
       </div>
     )

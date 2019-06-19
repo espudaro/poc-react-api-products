@@ -14,11 +14,14 @@
  *= require_self
  */
 
-.list-products,
-.details__prod {
+.main-content {
   width: 800px;
   margin: 20px auto;
   padding: 0 20px;
+}
+
+.list-products {
+  padding: 0;
 }
 
 .product__item {

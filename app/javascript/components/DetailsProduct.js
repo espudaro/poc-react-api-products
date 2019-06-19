@@ -24,11 +24,10 @@ class Details extends React.Component{
 
     var { items, isLoaded } = this.state;
     if (!isLoaded) {
-      return <div className='details__prod'> Loading...</div>;
+      return <div className='details__prod'> </div>;
     } else {
       return (
         <div className='details__prod'>
-
           <Link to='/Details' className='product__item--link'>Voltar</Link>
           <hr/>
           <h1 className='product__item--name'>{items[0].name}</h1>

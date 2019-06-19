@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import Home from './Home'
 import Details from './Details'
-import DetailsProduct from './DetailsProduct'
+// import DetailsProduct from './DetailsProduct'
 
 class App extends React.Component{
 
@@ -15,7 +15,7 @@ class App extends React.Component{
 
         <Route exact path="/" component={Home} />
         <Route exact path="/details" component={Details} />
-        <Route exact path="/DetailsProduct" component={DetailsProduct} />
+        {/*<Route path="/DetailsProduct" component={DetailsProduct} />*/}
 
       </div>
     )

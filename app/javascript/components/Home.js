@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component{
 
@@ -25,13 +26,15 @@ class Home extends React.Component{
 
     var { items, isLoaded } = this.state;
     if (!isLoaded) {
-      return <div> Loading...</div>;
+      return <div className='details__prod'> </div>;
     } else {
       return (
         <ul className='list-products'>
           {items.map(item => (
             <li key={item.sku} className='product__item'>
-              <img src={item.media} className='product__item--img' />
+              <Link to='/Details' className='product__item--link'>
+                <img src={item.media} className='product__item--img' />
+              </Link>
               <h3 className='product__item--name'>{item.name}</h3>
               <div className='product__item--sku'>{item.sku}</div>
               <p className='product__item--description'>{item.description}</p>

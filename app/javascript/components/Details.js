@@ -27,19 +27,16 @@ class Details extends React.Component{
       return <div className='details__prod'> </div>;
     } else {
       return (
-        <ul className='list-products'>
-          {items.map(item => (
-            <li key={item.sku} className='product__item'>
-              <Link to='/DetailsProduct' className='product__item--link'>
-                <img src={item.media} className='product__item--img' />
-              </Link>
-              <h3 className='product__item--name'>{item.name}</h3>
-              <div className='product__item--sku'>{item.sku}</div>
-              <p className='product__item--description'>{item.description}</p>
-              <div className='product__item--amount'>{item.amount}</div>
-            </li>
-          ))}
-        </ul>
+        <div className='details__prod'>
+          <Link to='/' className='product__item--link'>Voltar</Link>
+          <hr/>
+          <h1 className='product__item--name'>{items[0].name}</h1>
+          <img src={items[0].media} className='product__item--img' />
+          <div className='product__item--sku'>{items[0].sku}</div>
+          <p className='product__item--description'>{items[0].description}</p>
+          <div className='product__item--amount'>{items[0].amount}</div>
+        </div>
+
       );
     }
   }

@@ -14,7 +14,8 @@
  *= require_self
  */
 
-.main-content {
+.main-content,
+.details__prod {
   width: 800px;
   margin: 20px auto;
   padding: 0 20px;

@@ -1,25 +1,42 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
-import Home from './Home'
-import Details from './Details'
-// import DetailsProduct from './DetailsProduct'
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter, Link, Route } from 'react-router-dom'
+import Products from './Products'
 
-class App extends React.Component{
+
+export default class extends Component {
+  state = {
+    itemsProds: []
+  }
+
+  async componentDidMount() {
+    const itemsProds = await (await fetch('http://54.207.97.97:9090/products')).json()
+    this.setState({ itemsProds })
+  }
 
   render() {
+    const {itemsProds} =this.state
+    return <BrowserRouter>
+    <Fragment>
+      <ul>
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <Link to='/produtos'>Produtos</Link>
+        </li>
+      </ul>
+      <hr/>
 
-    return (
+      <Route exact path='/' render={() => <div> Home </div> } />
+      <Route path='/produtos' render={
+        props => <Products {...props} itemsProds={itemsProds} />
+      } />
 
-      <div className='main-content'>
-        <h1>Poc de React com Ruby!</h1>
 
-        <Route exact path="/" component={Home} />
-        <Route exact path="/details" component={Details} />
-        {/*<Route path="/DetailsProduct" component={DetailsProduct} />*/}
+    </Fragment>
+    </BrowserRouter>
 
-      </div>
-    )
   }
 }
 
-export default App;
+

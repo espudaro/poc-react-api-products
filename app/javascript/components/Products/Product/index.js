@@ -3,13 +3,6 @@ import { Link } from 'react-router-dom'
 
 export default ({ match, sku, name, media, description, amount }) =>
   <Fragment>
-    <div>
-      {sku}
-      {name}
-      {media}
-      {description}
-      {amount}
-    </div>
     <div className='details__prod'>
       <Link to='/' className='product__item--link'>Voltar</Link>
       <hr/>

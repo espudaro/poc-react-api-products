@@ -15,7 +15,8 @@
  */
 
 .main-content,
-.details__prod {
+.details__prod,
+.list-products {
   width: 800px;
   margin: 20px auto;
   padding: 0 20px;
